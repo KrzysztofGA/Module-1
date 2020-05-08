@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Obligatoriske Oppgave 1</title>
+        <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css" />
+    </head>
+    <body>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+        <script src="lib.js"></script>
+        <script>
+            // Second, Third, Fourth and Fifth Qunit test can be removed in V2....----------
+
+            //Teksten må ha lengde 10.Det må være punktum i tredje posisjon og i sjette posisjon.År er 0000 eller større. Måned er fra og med 01 til og med 12. Dag er fra og med 01 til og med 28.
+            QUnit.test(
+                "Valid Date (length, points, year bigger than '0000', month from '01 - 12' and days from '01 - 28' ",
+                function (assert) {
+                    var acceptableDate = isThisOk("15.05.1985");
+                    assert.equal(acceptableDate, true);
+                }
+            );
+
+            QUnit.test(
+                "Checking for - 29 er lov for februar hvis det er skuddår, 30 er lov for alle måneder utenom februar and 31 er lovlig for januar, mars, mai, juli, august, oktober og desember",
+                function (assert) {
+                    var acceptableDate = monthChecks("31.05.2020");
+                    assert.equal(acceptableDate, true);
+                }
+            );
+
+            // Unit tests after this point are for testing Ugyldig expressions//
+
+            QUnit.test("Ugyldig - Date length is 10", function (assert) {
+                var acceptableDate = isDateLengthOk("31.05.200");
+                assert.equal(acceptableDate, true);
+            });
+
+            QUnit.test("Ugyldig - Point at third and seventh position", function (assert) {
+                var acceptableDate = isDotInThirdAndSeventhPlace("3.1052.020");
+                assert.equal(acceptableDate, true);
+            });
+
+            QUnit.test("Ugyldig - Year is between 0000 and 9999", function (assert) {
+                var acceptableDate = isYearAbove0000("31.05.202037");
+                assert.equal(acceptableDate, true);
+            });
+
+            QUnit.test("Ugyldig - Month is from 01 to and including 12", function (assert) {
+                var acceptableDate = isMonthBetween01And12("06.15.2020");
+                assert.equal(acceptableDate, true);
+            });
+
+            QUnit.test("Ugyldig - Day is from 01 to and including 28 ", function (assert) {
+                var acceptableDate = isDayBetween01And28("40.06.2020");
+                assert.equal(acceptableDate, true);
+            });
+        </script>
+    </body>
+</html>

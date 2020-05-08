@@ -1,0 +1,10 @@
+#info {
+    width: 200px;
+}
+#point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    /* display: none; */
+}

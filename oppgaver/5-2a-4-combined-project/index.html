@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS Grid layout</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body onload="start()">
+        <div id="introduction">
+            <div id="message">
+                <div>
+                    <h1 style="font-size: 60px;">
+                        Are you ready<br />to discover the greatest secret<br />of successful people?
+                    </h1>
+                </div>
+                <div id="yesNo">
+                    <input class="yesOrNo" type="button" onclick="case1 ()" value="YES" />
+                    <input
+                        class="yesOrNo"
+                        type="button"
+                        onclick="location.href='https://boredbutton.com';"
+                        value="NO"
+                    />
+                </div>
+            </div>
+        </div>
+        <div id="mystery" class="displayNone">
+            <div id="case1" class="case">
+                <h2>The code is the answer to the question!</h2>
+                <p>How many bytes (B) have one kilobyte (kB)?</p>
+                <div id="calculator">
+                    <div id="monitor"></div>
+                    <div id="1" class="calcElement" onclick="pushNumber(this)">1</div>
+                    <div id="2" class="calcElement" onclick="pushNumber(this)">2</div>
+                    <div id="3" class="calcElement" onclick="pushNumber(this)">3</div>
+                    <div id="4" class="calcElement" onclick="pushNumber(this)">4</div>
+                    <div id="5" class="calcElement" onclick="pushNumber(this)">5</div>
+                    <div id="6" class="calcElement" onclick="pushNumber(this)">6</div>
+                    <div id="7" class="calcElement" onclick="pushNumber(this)">7</div>
+                    <div id="8" class="calcElement" onclick="pushNumber(this)">8</div>
+                    <div id="9" class="calcElement" onclick="pushNumber(this)">9</div>
+                    <div id="0" class="calcElement" onclick="pushNumber(this)">0</div>
+                    <div id="verify" class="calcElement" onclick="verify()">Verify</div>
+                    <div id="reset" class="calcElement" onclick="reset()">Reset</div>
+                </div>
+                <input id="nextCase1" class="answer displayNone" type="button" onclick="case2()" value="Next task" />
+            </div>
+            <div id="case2" class="case displayNone">
+                <h2>Do you like cats?</h2>
+                <p>You can show your affection for cats in two ways.</p>
+                <p>Write a few nice words to the cat or stroke the cat<br />(move the cursor over the cat's photo).</p>
+                <p>If the cat feels good, it will let you go.</p>
+                <div id="cat">
+                    <div id="cat1" class="code">
+                        <input id="catLetter" type="text" oninput="satisfaction()" />
+                        <p>For example, you can write:<br />"I love cats :)"</p>
+                    </div>
+                    <div id="cat2" class="code">
+                        <img id="catImg" src="img/cat.jpg" style="width: 200px"  onmouseover="satisfaction()" onmouseout="satisfaction()"/>
+                    </div>
+                </div>
+                <div id="satisfaction"></div>
+                <input id="nextCase2" class="answer displayNone" type="button" onclick="case3()" value="Next task" />
+            </div>
+            <div id="case3" class="case displayNone">
+                <h2>I am Artificial Intelligence</h2>
+                <p>I know a lot about you. To prove it to you,<br />I set your year of birth as a code.</p>
+                <br />
+                <p>Enter your birth year in YYYY format below<br />and press ENTER</p>
+                <input id="year" type="text" onchange="showNext('nextCase3', this);unLock('code3'); clearInput(this)" />
+                <input id="nextCase3" class="answer displayNone" type="button" onclick="award()" value="Award" />
+            </div>
+            <div id="award" class="case displayNone">
+                <h2>Congratulations!!! :)</h2>
+                <p>Be a little better today than you were yesterday.</p>
+                <p>And REPEAT every day.</p>
+                <p>This is the whole secret :P</p>
+                <br />
+                <p><a href="http://slightedge.org/">The Slight Edge</a> by Jeff Olson</p>
+                <br />
+                <iframe
+                    width="320"
+                    height="180"
+                    src="https://www.youtube.com/embed/bi7yB7wH3to?controls=0"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe
+                ><br /><br />
+                <p>If you read this, tell me "Hello" on Discord :)</p>
+            </div>
+            <div id="safe">
+                <div id="code1" class="code">
+                    <img src="img/close.png" style="width: 80px; margin-top: 35px" />
+                </div>
+                <div id="code2" class="code">
+                    <img src="img/close.png" style="width: 80px; margin-top: 35px" />
+                </div>
+                <div id="code3" class="code">
+                    <img src="img/close.png" style="width: 80px; margin-top: 35px" />
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="container">
+            <div class="header">
+                <div class="header">
+                    <h3>Inspired by GetAcademy<br />and Terje</h3>
+                </div>
+            </div>
+            <div class="mainContent">
+                <div id="text">
+                    <h1
+                        style="text-align: center; margin-top:20px; margin-bottom: 30px;"
+                    >
+                        Who said that?
+                    </h1>
+                    <ul>
+                        <li id="quotation1" onclick="answer('quotation1')">
+                            Everything should be made as simple as possible, but
+                            not simpler.<br />
+                        </li>
+                        <li id="quotation2" onclick="answer('quotation2')">
+                            I know that I know nothing.<br /><br />
+                        </li>
+                        <li id="quotation3" onclick="answer('quotation3')">
+                            Procrastination is the student's greatest enemy.<br /><br />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">
+                <h5>Created by Krzysztof Zygmunt</h5>
+                <p>
+                    Project on
+                    <a href="https://github.com/KrzysztofGA/2-onclick-innerHTML"
+                        >GitHub</a
+                    >
+                </p>
+            </div>
+        </div>
+        <script>
+            function answer(text) {
+                if (text == "quotation1") {
+                    document.getElementById("quotation1").innerHTML =
+                        "Albert Einstein<br /><br />";
+                } else if (text == "quotation2") {
+                    document.getElementById("quotation2").innerHTML =
+                        "Socrates<br /><br />";
+                } else {
+                    document.getElementById("quotation3").innerHTML =
+                        "Eskil today at the meeting with Module 1 :)<br /><br />";
+                }
+            }
+        </script> -->
+    </body>
+</html>

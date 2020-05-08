@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>QUnit Oppgave 2</title>
+        <link
+            rel="stylesheet"
+            href="https://code.jquery.com/qunit/qunit-2.9.2.css"
+        />
+    </head>
+
+    <body>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+        <script src="controller.js" defer></script>
+        <!-- <script src="view.js" defer></script> -->
+        <script>
+            let numbers;
+            let barNo;
+            let inputValue;
+            let chosenBar;
+
+            function show() {}
+
+            function initModel() {
+                numbers = [1, 2, 3, 4, 5];
+                barNo = 3;
+                inputValue = 10;
+                chosenBar = '';
+            }
+
+            QUnit.test('velge stolpe', function (assert) {
+                initModel();
+                choseBar(barNo);
+                assert.equal(chosenBar, 3);
+                assert.deepEqual(numbers, [1, 2, 3, 4, 5]);
+            });
+
+            QUnit.test('slette en stolpe', function (assert) {
+                initModel();
+                removeBar(barNo);
+                assert.equal(numbers.length, 4);
+                assert.deepEqual(numbers, [1, 2, 3, 5]);
+            });
+
+            QUnit.test('endre en stolpe', function (assert) {
+                initModel();
+                changeBarValue(barNo);
+                assert.equal(numbers[barNo], 10);
+                assert.deepEqual(numbers, [1, 2, 3, 10, 5]);
+            });
+
+            QUnit.test('legge til en stolpe', function (assert) {
+                initModel();
+                addNewBar(inputValue);
+                assert.equal(numbers.length, 6);
+                assert.deepEqual(numbers, [1, 2, 3, 4, 5, 10]);
+            });
+        </script>
+    </body>
+</html>

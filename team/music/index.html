@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The voice of colors</title>
+        <style>
+            .float {
+                float: left;
+                width: 50px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width: 300px;">
+            <h1 style="text-align: center;">The voice of colors</h1>
+            <div class="float" style="background-color: blueviolet;" onclick="playColor('bubbles')">
+                <audio id="bubbles">
+                    <source src="./sounds/bubbles.mp3" type="audio/mpeg" />
+                </audio>
+            </div>
+            <div class="float" style="background-color: rgb(226, 43, 144);" onclick="playColor('clay')">
+                <audio id="clay">
+                    <source src="./sounds/clay.mp3" />
+                    type="audio/mpeg" />
+                </audio>
+            </div>
+            <div class="float" style="background-color: rgb(43, 214, 226);" onclick="playColor('confetti')">
+                <audio id="confetti">
+                    <source src="./sounds/confetti.mp3" type="audio/mpeg" />
+                </audio>
+            </div>
+            <div class="float" style="background-color: rgb(226, 162, 43);" onclick="playColor('glimmer')">
+                <audio id="glimmer">
+                    <source src="./sounds/glimmer.mp3" type="audio/mpeg" />
+                </audio>
+            </div>
+            <div class="float" style="background-color: rgb(43, 226, 58);" onclick="playColor('moon')">
+                <audio id="moon">
+                    <source src="./sounds/moon.mp3" type="audio/mpeg" />
+                </audio>
+            </div>
+            <div class="float" style="background-color: rgb(226, 110, 43);" onclick="playColor('ufo')">
+                <audio id="ufo">
+                    <source src="./sounds/ufo.mp3" type="audio/mpeg" />
+                </audio>
+            </div>
+        </div>
+        <script>
+            function playColor(voice) {
+                color = document.getElementById(voice);
+                color.play();
+            }
+        </script>
+    </body>
+</html>
+
+<!-- 
+    UKENS TEAMOPPGAVE: SOUNDBOARD!
+Lag noen diver - og la hver av dem ha en lyd inni seg.
+Lyd settes inn med bruk av <audio> tagger
+ex:  <audio src="./sounds/moon.mp3"></audio>
+Lag en onclick event på hver div som triggrer en funksjon 
+som spiller av valgt lyd med .play()
+
+Hint:
+Div
+DOM events
+bruk av parameter
+<audio>
+.play() (innebygget funksjon)
+
+Om noen trenger noen lydklipp så har jeg noen liggende :)
+Husk!
+ Dere har helt til tirsdag, og bruk i hovedsak TP øktene til dette -
+om ikke alle er veldig lystne på å fortsette da!
+Gjør så mye/lite ut av det som dere vil - alt fra to knapper - til et helt keyboard!
+ -->

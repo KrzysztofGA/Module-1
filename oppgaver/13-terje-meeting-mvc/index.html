@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>
+            Tampen brenner
+        </title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script type="text/javascript" src="script.js" defer></script>
+    </head>
+    <body>
+        <div id="info">Finn det hemmelige punktet!</div>
+        <div id="point"></div>
+    </body>
+</html>
+
+<!-- 
+    https://stackoverflow.com/questions/7790725/javascript-track-mouse-position
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div id="app"></div>
+
+        <script>
+            // model
+            const persons = [];
+
+            // view
+            updateView();
+            function updateView() {
+                let personsHtml = '';
+                for (let i = 0; i < persons.length; i++) {
+                    const person = persons[i];
+                    personsHtml += `<li>${person}</li>`;
+                }
+                const html =
+                    personsHtml === ''
+                        ? `<i>Ingen påmeldte</i>`
+                        : `<ul>${personsHtml}</ul>`;
+                document.getElementById('app').innerHTML = `
+                <h3>Påmeldte</h3>
+                <ul>
+                    ${personsHtml}
+                </ul>     
+                ${
+                    persons.length === 0 ? '<p><i>Ingen påmeldte</i></p>' : ''
+                }        
+                <b>Påmelding:</b> 
+                Navn: 
+                <input type="text" id="person"/>
+                <button onclick="register()">Meld på</button>
+            `;
+            }
+
+            // controller
+            function register() {
+                const person = document.getElementById('person').value;
+                persons.push(person);
+                updateView();
+            }
+        </script>
+    </body>
+</html>

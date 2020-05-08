@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Word Puzzle</title>
+
+
+
+<style>
+.button {
+    width: 100px;
+    color: white;
+    box-shadow: 5px 3px;
+    border-radius: 10px;
+    background-color: #ff7d59;
+    background-image: linear-gradient(319deg, #ff7d59 0%, #ff583a 37%, #f4a698 100%);
+}
+
+</style>
+
+    </head>
+    <body>
+        <div>
+            <span id="word1" style="color:red">____</span> gonna give you up,
+            <span id="word2" style="color:red">____</span> gonna let you down, 
+            <span id="word3" style="color:red">____</span> gonna run around and desert you!
+        </div>
+
+        <div>
+            <p><button class="button" onclick="buttonClick(this,'word1')">Always</button>
+            <button class="button" onclick="buttonClick(this,'word1')">Eternally</button>
+            <button class="button" onclick="buttonClick(this,'word1')">Sometimes</button><br>
+            <button class="button" onclick="buttonClick(this,'word2')">Never More</button>
+            <button class="button" onclick="buttonClick(this,'word2')">Regularly</button>
+            <button class="button" onclick="buttonClick(this,'word2')">Never</button><br>
+            <button class="button" onclick="buttonClick(this,'word3')">Occasionally</button>
+            <button class="button" onclick="buttonClick(this,'word3')">Evermore</button>
+            <button class="button" onclick="buttonClick(this,'word3')">Constantly</button></p>
+
+
+
+        </div>
+
+        <script>
+
+                function buttonClick(word, place) {
+                    var w = word.innerHTML;
+                    document.getElementById(place).innerHTML = w;
+                }
+
+        </script>
+    </body>
+</html>

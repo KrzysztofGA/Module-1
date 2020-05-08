@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 2px;
+    padding: 2px;
+    outline: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: default;
+}
+
+.barBorder {
+    stroke-width: 0.5;
+    stroke: rgb(0, 0, 0);
+}
+
+#info {
+    font-weight: bold;
+    color: red;
+}
+
+#fjerneButton {
+    color: red;
+    font-weight: bold;
+}
+button {
+    padding: 5px;
+    font-size: 14px;
+    margin: 4px 2px;
+}

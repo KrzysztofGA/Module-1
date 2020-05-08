@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS Grid layout</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="header">
+                    <h3>Inspired by GetAcademy<br />and Terje</h3>
+                </div>
+            </div>
+            <div class="mainContent">
+                <div id="text">
+                    <h1
+                        style="text-align: center; margin-top:20px; margin-bottom: 30px;"
+                    >
+                        Who said that?
+                    </h1>
+                    <ul>
+                        <li id="quotation1" onclick="answer('quotation1')">
+                            Everything should be made as simple as possible, but
+                            not simpler.<br />
+                        </li>
+                        <li id="quotation2" onclick="answer('quotation2')">
+                            I know that I know nothing.<br /><br />
+                        </li>
+                        <li id="quotation3" onclick="answer('quotation3')">
+                            Procrastination is the student's greatest enemy.<br /><br />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">
+                <h5>Created by Krzysztof Zygmunt</h5>
+                <p>
+                    Project on
+                    <a href="https://github.com/KrzysztofGA/2-onclick-innerHTML"
+                        >GitHub</a
+                    >
+                </p>
+            </div>
+        </div>
+        <script>
+            function answer(text) {
+                if (text == "quotation1") {
+                    document.getElementById("quotation1").innerHTML =
+                        "Albert Einstein<br /><br />";
+                } else if (text == "quotation2") {
+                    document.getElementById("quotation2").innerHTML =
+                        "Socrates<br /><br />";
+                } else {
+                    document.getElementById("quotation3").innerHTML =
+                        "Eskil today at the meeting with Module 1 :)<br /><br />";
+                }
+            }
+        </script>
+    </body>
+</html>

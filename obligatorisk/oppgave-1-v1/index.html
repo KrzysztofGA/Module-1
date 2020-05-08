@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Obligatorisk oppgave 1</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+    <body onload="showDate()">
+        <div id="info"></div>
+        <div>
+            <div id="day"></div>
+            <div>Day</div>
+        </div>
+        <div>
+            <div id="month"></div>
+            <div>Month</div>
+        </div>
+        <div>
+            <div id="year"></div>
+            <div>Year</div>
+        </div>
+        <input type="text" onchange="isDateValid(this)" />
+    </body>
+</html>

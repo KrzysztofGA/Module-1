@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Naomi, Jamie, Krzysztof -</title>
+        <style>
+            div {
+                text-align: center;
+            }
+
+            ::selection {
+                background: none;
+            }
+
+            #day {
+                font-size: 60px;
+                font-weight: bold;
+                margin: 100px 50px 50px;
+            }
+
+            #quote {
+                font-style: italic;
+                font-size: 20px;
+                background-color: #70b2d9;
+                background-image: linear-gradient(315deg, #70b2d9 0%, #39e5b6 74%);
+                border-radius: 90%;
+                padding: 10px;
+                margin: 20px 50px 100px;
+            }
+
+            #name {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body onload="(checkDay())">
+        <div>How to write shorter code (main page mechanics)?</div>
+        <div id="day"></div>
+        <div id="quote"></div>
+        <div>
+            <span onclick="previousDay()">PREVIOUS DAY </span>||
+            <span onclick="nextDay()"> NEXT DAY</span>
+        </div>
+        <script>
+            // START main page mechanics ------------------------------------
+            var d = new Date();
+            var w = d.getDay();
+            function checkDay() {
+                var weekday = new Array(7);
+                weekday[0] = [
+                    "Sunday",
+                    '"Don\'t sweat the petty things and don\'t pet the sweaty things"<br><span id="name">George CarlinSunday</span>'
+                ];
+                weekday[1] = [
+                    "Monday",
+                    '"Life is\'t something you possess. It\'s something you take part in, and you witness."<br><span id="name">Louis CK</span>'
+                ];
+                weekday[2] = [
+                    "Tuesday",
+                    '"In the land of the skunks, he who has half a nose is King."<br><span id="name">Chris Farley</span>'
+                ];
+                weekday[3] = [
+                    "Wednesday",
+                    '"Frisbeetarianism is the belief that when you die, your soul goes up on the roof and gets stuck."<br><span id="name">George Carlin</span>'
+                ];
+                weekday[4] = [
+                    "Thursday",
+                    '"I\'m speaking with myself, number one, because I have a very good brain and I’ve said a lot of things"<br><span id="name">Donald Trump</span>'
+                ];
+                weekday[5] = [
+                    "Friday",
+                    '"Don\'t accept the old order. Get rid of it."<br><span id="name">Johnny Rotten</span>'
+                ];
+                weekday[6] = [
+                    "Saturday",
+                    '"I don\'t think you\'re ever going to be truly successful if everyone likes you."<br><span id="name">Jim Jeffries</span>'
+                ];
+
+                document.getElementById("day").innerHTML = weekday[w][0];
+                document.getElementById("quote").innerHTML = weekday[w][1];
+            }
+            // END main page mechanics ------------------------------------
+
+            function nextDay() {
+                if (w == 6) {
+                    w = 6;
+                } else {
+                    w++;
+                }
+                checkDay();
+                console.log("Variable w = " + w);
+            }
+
+            function previousDay() {
+                if (w == 0) {
+                    w = 0;
+                } else {
+                    w--;
+                }
+                checkDay();
+                console.log("Variable w = " + w);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        div {
+            font-size: 0px;
+        }
+
+        button {
+            font-size: 30px;
+            background-color: rgb(255, 104, 142);
+            border: none;
+            color: rgb(255, 185, 206);
+            padding: 34px 40px;
+            border: solid;
+        }
+
+        .nummerboks {
+            font-size: 50px;
+            color: rgb(255, 173, 193);
+            height: 100px;
+            width: 302px;
+            background-color: rgb(255, 130, 161);
+            border: solid;
+        }
+    </style>
+
+    <body>
+        <div id="numberpad" class="nummerboks"></div>
+        <div>
+            <button onclick="choose(this)" onmouseover="changecolor(this)" onmouseout="changeback(this)">1</button>
+            <button onclick="choose(this)" onmouseover="changecolor(this)" onmouseout="changeback(this)">2</button>
+            <button onclick="choose(this)" onmouseover="changecolor(this)" onmouseout="changeback(this)">3</button>
+            <br />
+            <button onclick="choose(this)" onmouseover="changecolor(this)" onmouseout="changeback(this)">4</button>
+            <button onclick="choose(this)" onmouseover="changecolor(this)" onmouseout="changeback(this)">5</button>
+            <button onclick="choose(this)" onmouseover="changecolor(this)" onmouseout="changeback(this)">6</button>
+            <br />
+            <button onclick="choose(this)" onmouseover="changecolor(this)" onmouseout="changeback(this)">7</button>
+            <button onclick="choose(this)" onmouseover="changecolor(this)" onmouseout="changeback(this)">8</button>
+            <button onclick="choose(this)" onmouseover="changecolor(this)" onmouseout="changeback(this)">9</button>
+            <br />
+            <button onclick="reset()" onmouseover="changecolor(this)" onmouseout="changeback(this)">Reset</button>
+
+            <script>
+                function changecolor(tilorange) {
+                    tilorange.style.background = "rgb(230, 70, 110)";
+                }
+                function changeback(tilrosaigjen) {
+                    tilrosaigjen.style.background = "rgb(255, 104, 142)";
+                }
+
+                var numpad = document.getElementById("numberpad");
+
+                function choose(valgt) {
+                    var myObj = valgt.innerHTML;
+                    console.log(myObj);
+                    numpad.innerHTML += valgt.innerHTML;
+
+                    if (numpad.innerText == "3812") {
+                        numpad.innerText = "WIN";
+                        console.log("WIN");
+                    }
+                }
+                function reset() {
+                    location.reload();
+                }
+            </script>
+        </div>
+    </body>
+</html>

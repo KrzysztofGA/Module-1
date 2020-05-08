@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>QUnit Example</title>
+        <link
+            rel="stylesheet"
+            href="https://code.jquery.com/qunit/qunit-2.9.2.css"
+        />
+    </head>
+
+    <body>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+        <script src="controller.js" defer></script>
+        <!-- <script src="view.js" defer></script> -->
+        <script>
+            let numbers;
+            let barNo;
+            let inputValue;
+            let bar = {};
+            let chosenBar;
+
+            function show() {}
+
+            QUnit.test('velge stolpe', function (assert) {
+                chosenBar = '';
+                bar.id = 3;
+                choseBar(bar);
+                assert.equal(chosenBar, 3);
+            });
+
+            QUnit.test('slette en stolpe', function (assert) {
+                numbers = [1, 2, 3, 4, 5];
+                barNo = 2;
+                removeBar(barNo);
+                assert.deepEqual(numbers, [1, 2, 4, 5]);
+            });
+
+            QUnit.test('endre en stolpe', function (assert) {
+                numbers = [1, 2, 3, 4, 5];
+                inputValue = 10;
+                barNo = 2;
+                changeBarValue(barNo);
+                assert.deepEqual(numbers, [1, 2, 10, 4, 5]);
+            });
+
+            QUnit.test('legge til en stolpe', function (assert) {
+                numbers = [1, 2, 3, 4, 5];
+                inputValue = 10;
+                addNewBar(inputValue);
+                assert.deepEqual(numbers, [1, 2, 3, 4, 5, 10]);
+            });
+        </script>
+    </body>
+</html>

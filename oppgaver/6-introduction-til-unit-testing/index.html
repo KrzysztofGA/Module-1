@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>QUnit Example</title>
+        <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css" />
+        <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <!-- <input type="text" oninput="handleNewText(this)" />
+        <div id="reversedText"></div> -->
+
+        <div id="qunit"></div>
+        <script>
+            // function handleNewText(inputTag) {
+            //     let text = inputTag.value;
+            //     let reversedText = reverseText(text);
+            //     document.getElementById("reversedText").innerHTML = reversedText;
+            // }
+            QUnit.test("snu tekst - Terje", function (assert) {
+                const actual = reverseText("Terje");
+                const expected = "ejreT";
+                assert.equal(actual, expected);
+            });
+            QUnit.test("snu tekst - blanc", function (assert) {
+                const actual = reverseText("");
+                const expected = "";
+                assert.equal(actual, expected);
+            });
+            QUnit.test("snu tekst - null", function (assert) {
+                const actual = reverseText(null);
+                const expected = null;
+                assert.equal(actual, expected);
+            });
+            QUnit.test("snu tekst - undefine", function (assert) {
+                const actual = reverseText(undefined);
+                const expected = undefined;
+                assert.equal(actual, expected);
+            });
+        </script>
+    </body>
+</html>

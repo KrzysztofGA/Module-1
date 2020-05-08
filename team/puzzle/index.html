@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h2>Get Academy Puzzle</h2>
+        <p>Created by Naomi, Krzysztof and Jamie <button onclick="reloadPage()">Reload</button></p>
+        
+        <div id="picture1" onclick="addPicture('picture1')" style="float: left">
+            <img src="img/picture1.jpg" style="width: 200px" />
+        </div>
+        <div id="picture2" onclick="addPicture('picture2')">
+            <img src="img/picture2.jpg" style="width: 200px" />
+        </div>
+
+        <div id="container"></div>
+
+        <script>
+            function addPicture(picture) {
+                let string =
+                    "<img src='img/" +
+                    picture +
+                    ".jpg' style='width:400px; display: block'/>";
+                document.getElementById("container").innerHTML += string;
+                document.getElementById(picture).removeAttribute("onclick");
+            }
+            function reloadPage(){
+                location.reload();
+            }
+        </script>
+    </body>
+</html>

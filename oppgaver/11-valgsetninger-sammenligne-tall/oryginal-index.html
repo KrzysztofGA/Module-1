@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style type="text/css">
+            div {
+                background-color: aquamarine;
+                border: greenyellow solid 1px;
+                font-size: 300%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="info"></div>
+        <script type="text/javascript">
+            /*
+            Valgsetninger
+                - for eksempel basert på å sammeligne tall
+                - generelt: en logisk verdi (av typen "boolean")
+                - flere betingelser sammen: OG, ELLER, IKKE, ER-LIK, ER-ULIK
+                - hvis (if) - ellers (else) - ellers-hvis (else if)
+            Datatyper
+                - tekst
+                - tall
+                - logisk
+         */
+
+            var greaterThanSymbol = '&gt;';
+            var smallerThanSymbol = '&lt;';
+
+            window.onresize = windowSizeChanged;
+            windowSizeChanged();
+
+            function windowSizeChanged() {
+                var div = document.getElementById('info');
+                var height = window.innerHeight;
+                var width = window.innerWidth;
+                div.innerHTML = width + '×' + height;
+                var totalPixelCount = height * width;
+                if (totalPixelCount > 1000000) {
+                    div.innerHTML += ' ' + greaterThanSymbol + ' 1 megapixel';
+                } else if (totalPixelCount > 500000) {
+                    div.innerHTML += ' ' + greaterThanSymbol + ' 1/2 megapixel';
+                } else if (totalPixelCount > 250000) {
+                    div.innerHTML += ' ' + greaterThanSymbol + ' 1/4 megapixel';
+                } else if (totalPixelCount > 125000) {
+                    div.innerHTML += ' ' + greaterThanSymbol + ' 1/8 megapixel';
+                } else {
+                    div.innerHTML += ' ' + smallerThanSymbol + ' 1/8 megapixel';
+                }
+
+                div.innerHTML += '<br/>';
+
+                if ((width < 300) & (height > 600)) {
+                    div.innerHTML += ' Høy og smal';
+                }
+                if ((width > 1200) | (height > 600)) {
+                    div.innerHTML += ' stor bredde og/eller høyde';
+                }
+                if (width !== height) {
+                    div.innerHTML += ' ikke lik høyde og bredde!';
+                }
+                //totalPixelCount = Math.floor(totalPixelCount / 1000);
+                //div.innerHTML += ' (' + totalPixelCount + 'k)';
+            }
+        </script>
+    </body>
+</html>

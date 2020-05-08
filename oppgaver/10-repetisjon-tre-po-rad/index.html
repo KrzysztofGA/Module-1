@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>
+            Repetisjon + litt mer i dybden: Introduksjon til Javascript |
+            Oppgave - tre på rad
+        </title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div onclick="setX(this)" class="first"></div>
+        <div onclick="setX(this)"></div>
+        <div onclick="setX(this)"></div>
+
+        <div onclick="setX(this)" class="first"></div>
+        <div onclick="setX(this)"></div>
+        <div onclick="setX(this)"></div>
+
+        <div onclick="setX(this)" class="first"></div>
+        <div onclick="setX(this)"></div>
+        <div onclick="setX(this)"></div>
+    </body>
+</html>
+
+<!-- 
+    Lag en html-fil som viser ni kvadrater. Lag ni DIV-er og sett bakgrunnsfargen til noe annet enn hvit. 
+    Pass på at det er luft i mellom, så de ikke "sklir sammen" til kun én firkant. 
+
+    Bruk CSS til å sørge for at tre og tre DIV-er havner på samme linje, det vil si at det totalt blir tre linjer med tre firkanter hver. 
+    Hint: float + der i videoen hvor jeg sørger for at overskriften ikke kommer til høyre for boksene, men under på en ny linje.
+
+    Bruk Javascript til å sørge for at om man trykker på en av rutene, så settes det en grønn "x" i denne ruten. 
+
+    Lim inn koden under - og sørg for at denne kjøres når man har klikket på en rute - og etter at det har blitt satt "x" i denne ruten. 
+    Koden setter en "o" i en av de andre tomme rutene, hvis det er noen tomme igjen:
+
+    var divs1 = document.getElementsByTagName('div');
+    var divs2 = new Array();
+    for (var i = 0; i < divs1.length; i++) {
+    	if (divs1[i].innerHTML !== 'x' && divs1[i].innerHTML !== 'o') {
+    		divs2.push(divs1[i]);
+    	}
+    }
+
+    if (divs2.length > 0) {
+    	var index = Math.floor(Math.random() * divs2.length);
+    	divs2[index].innerHTML = 'o';
+    	divs2[index].style.color = 'blue';
+    }
+
+    Sørg for at det ikke er mulig å sette en "x" der det alt er en "x" eller en "o", ved hjelp av en if-setning.
+ -->
